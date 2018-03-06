@@ -1,0 +1,60 @@
+<div class="register">
+  <h3>欢迎注册账号</h3>
+  <form action="/user/insert" method="POST">
+    <ul>
+      <li>
+          <span>设置账号：</span> <input type="text" name="userName" id="">
+      </li>
+      <li>
+          <span>设置密码：</span> <input type="password" name="password" id="">
+      </li>
+      <li>
+          <span>确认密码：</span> <input type="password" name="rePassword" id="">
+      </li>
+      <li>
+        <input type="submit" value="提交" class="primary-btn">
+        <a href="/user/login">返回登录</a>
+      </li>
+    </ul>
+  </form>
+</div>
+<style>
+  .register{
+    padding: 20px;
+  }
+  .register h3{
+    text-align: center;
+    line-height: 50px;
+    margin: 50px 0;
+    font-size: 24px;
+  }
+  .register form{
+    width: 500px;
+    margin: 0 auto;
+  }
+  .register form ul li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    line-height: 36px;
+  }
+  .register form ul li span{
+    width: 100px;
+    text-align: right;
+  }
+  .register form ul li:last-of-type{
+    justify-content: flex-end;
+  }
+  .register form ul li:last-of-type a{
+    font-size: 12px;
+    color: #20a0ff;
+  }
+  .register form ul li:last-of-type a:hover{
+    text-decoration: underline;
+  }
+  .register form ul li input[type='text'],
+  .register form ul li input[type='password']{
+    flex: 1;
+  }
+</style>

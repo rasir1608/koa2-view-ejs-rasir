@@ -1,0 +1,95 @@
+<div class="todolist">
+  <h3>您的代办事项列表</h3>
+  <form action="/todolist/insert" method="POST">
+    <input type="text" name="content" id="">
+    <input type="submit" value="新增事项" class="primary-btn">
+  </form>
+  <table cellspacing='0' cellpadding='0'>
+    <tr>
+      <th>序号</th>
+      <th>ID</th>
+      <th>内容</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+    <% todoList.forEach((item,index) => { %>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= item.id %></td>
+        <td><%= item.content %></td>
+        <td><%= item.status ? '已完成':'未完成' %></td>
+        <td class="todo-actions">
+          <form action="/todolist/del" method="POST">
+            <input type="text" name="id" style="display: none" value="<%= item.id %>"> 
+            <button class="tiny-btn">删除</button>
+          </form>
+          <% if(!item.status){ %>
+            <form action="/todolist/update" method="POST">
+              <input type="text" name="id" style="display: none"  value="<%= item.id %>"> 
+              <input type="text" name="status" style="display: none"  value="<%= item.status+1 %>"> 
+              <button class="tiny-btn">完成</button>
+            </form>
+          <% } %>
+        </td>
+      </tr>
+      <% }) %>
+      <% if(todoList.length === 0){ %>
+        <tr>
+          <td colspan="5">
+            暂无数据
+          </td>
+        </tr>
+      <% } %>
+  </table>
+</div>
+<style>
+  .todolist{
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+  }
+  .todolist h3{
+    line-height: 50px;
+    margin: 50px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  .todolist form{
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 36px;
+  }
+  .todolist form input[type='text']{
+    flex: 1;
+  }
+  .todolist table {
+    padding: 20px 0;
+    width: 100%;
+  }
+  .todolist table tr th{
+    border: 1px solid #dfe6ec;
+    background: #eef1f6;
+    line-height: 36px;
+  }
+  .todolist table tr th:first-of-type{
+    width: 50px;
+  }
+  .todolist table tr td{
+    border: 1px solid #dfe6ec;
+    line-height: 36px;
+    text-align: center;
+  }
+  .todolist table tr th:last-of-type{
+    width: 150px;
+  }
+  .todolist table tr .todo-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .todolist table tr .todo-actions form{
+    width: auto;
+  }
+</style>

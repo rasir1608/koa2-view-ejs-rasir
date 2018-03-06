@@ -1,0 +1,25 @@
+{
+  "name": "koa2-view-ejs-rasir",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "rasir",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.35.2"
+  },
+  "devDependencies": {
+    "koa-body": "^2.5.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.1.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2"
+  }
+}

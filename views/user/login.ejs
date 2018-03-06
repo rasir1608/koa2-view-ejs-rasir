@@ -1,0 +1,57 @@
+<div class="login">
+    <h3>欢迎登录</h3>
+    <form action="/user/login" method="POST">
+      <ul>
+        <li>
+            <span>用户账号：</span> <input type="text" name="userName" id="">
+        </li>
+        <li>
+            <span>输入密码：</span> <input type="password" name="password" id="">
+        </li>
+        <li>
+          <input type="submit" value="登录" class="primary-btn">
+          <a href="/user/register">注册账号</a>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <style>
+    .login{
+      padding: 20px;
+    }
+    .login h3{
+      text-align: center;
+      line-height: 50px;
+      margin: 50px 0;
+      font-size: 24px;
+    }
+    .login form{
+      width: 500px;
+      margin: 0 auto;
+    }
+    .login form ul li{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 0;
+      line-height: 36px;
+    }
+    .login form ul li span{
+      width: 100px;
+      text-align: right;
+    }
+    .login form ul li:last-of-type{
+      justify-content: flex-end;
+    }
+    .login form ul li input[type='text'],
+    .login form ul li input[type='password']{
+      flex: 1;
+    }
+    .login form ul li:last-of-type a{
+      font-size: 12px;
+      color: #20a0ff;
+    }
+    .login form ul li:last-of-type a:hover{
+      text-decoration: underline;
+    }
+  </style>

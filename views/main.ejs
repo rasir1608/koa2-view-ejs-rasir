@@ -1,0 +1,31 @@
+<div class="pub-main">
+  <% switch(router){
+    case 'todolist': %>
+    <!-- todolist.ejs -->
+    <% include todolist/index %>
+     <% break; %>
+     <% case 'login': %>
+     <!-- login.ejs -->
+     <% include user/login %>
+     <% break; %>
+     <% case 'register': %>
+     <!-- register -->
+     <% include user/register %>
+     <% break; %>
+     <% case 'logout': %>
+     <!-- logout -->
+     <% include user/logout %>
+     <% break; %>
+     <% case '401': %>
+     <!-- 401 -->
+     <% include error_pages/401 %>
+     <% break; %>
+     <% case '404': %>
+     <!-- 404 -->
+     <% include error_pages/404 %>
+     <% break; %>
+     <% default : %>
+     <% include error_pages/err %>
+     <% break; %>
+     <% } %>
+  </div>
